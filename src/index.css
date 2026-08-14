@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-primary transition-colors duration-200;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background bg-accent text-white hover:opacity-90;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background bg-elevated text-primary hover:bg-surface;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background bg-transparent text-secondary hover:bg-elevated hover:text-primary;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 rounded-md bg-elevated text-primary border border-transparent focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+
+  .editor {
+    @apply w-full h-full p-4 rounded-md bg-elevated text-primary font-mono text-sm focus:outline-none focus:ring-2 focus:ring-accent;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg border border-border p-6 transition-colors duration-200 hover:bg-elevated hover:border-accent/20;
+  }
+
+  .tool-card {
+    @apply bg-surface rounded-lg border border-border p-6 transition-colors duration-200 hover:bg-elevated hover:border-accent/20 cursor-pointer;
+  }
+
+  .tool-card:hover {
+    @apply transform translate-y-px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--tw-border) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--tw-border);
+    border-radius: 3px;
+  }
+}
