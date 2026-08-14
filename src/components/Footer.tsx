@@ -109,7 +109,7 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Atif-Ayyoub"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-primary transition-colors flex items-center gap-1"
