@@ -1,6 +1,36 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+:root, html, html.dark {
+  --background: #0B0D10;
+  --surface: #11151A;
+  --elevated: #171C22;
+  --border: #252B33;
+  --primary: #F5F7FA;
+  --secondary: #9AA4B2;
+  --muted: #687383;
+  --accent: #6C63FF;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  color-scheme: dark;
+}
+
+html.light {
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --elevated: #F1F5F9;
+  --border: #E2E8F0;
+  --primary: #0F172A;
+  --secondary: #475569;
+  --muted: #64748B;
+  --accent: #4F46E5;
+  --success: #16A34A;
+  --warning: #D97706;
+  --error: #DC2626;
+  color-scheme: light;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
@@ -8,10 +38,12 @@
 
   body {
     @apply bg-background text-primary transition-colors duration-200;
+    background-color: var(--background);
+    color: var(--primary);
   }
 
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
 }
 
@@ -60,7 +92,7 @@
 
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: var(--tw-border) transparent;
+    scrollbar-color: var(--border) transparent;
   }
 
   .scrollbar-thin::-webkit-scrollbar {
@@ -73,7 +105,7 @@
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: var(--tw-border);
+    background-color: var(--border);
     border-radius: 3px;
   }
 }

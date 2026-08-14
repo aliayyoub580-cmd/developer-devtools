@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
 import type { Theme, ThemeContextType } from '../types';
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -49,30 +49,36 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       root.classList.add('dark');
       root.classList.remove('light');
     } else if (theme === 'light') {
-      root.classList.remove('dark');
       root.classList.add('light');
+      root.classList.remove('dark');
     } else {
-      root.classList.remove('dark', 'light');
       const systemTheme = getSystemTheme();
       if (systemTheme === 'dark') {
         root.classList.add('dark');
+        root.classList.remove('light');
       } else {
         root.classList.add('light');
+        root.classList.remove('dark');
       }
     }
   }, [theme]);
 
-  const setTheme = (newTheme: Theme) => {
+  const setTheme = useCallback((newTheme: Theme) => {
     setThemeState(newTheme);
-  };
+  }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setThemeState(newTheme);
-  };
+  const toggleTheme = useCallback(() => {
+    setThemeState(prev => (prev === 'dark' ? 'light' : 'dark'));
+  }, []);
+
+  const value = useMemo(() => ({
+    theme,
+    setTheme,
+    toggleTheme,
+  }), [theme, setTheme, toggleTheme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   );

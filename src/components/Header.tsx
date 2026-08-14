@@ -84,9 +84,7 @@ export const Header = () => {
           {/* Logo and desktop navigation */}
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-accent rounded-md flex items-center justify-center group-hover:scale-105 transition-transform">
-                <span className="text-white font-bold text-lg">D</span>
-              </div>
+              <img src="/logo.png" alt="DevTools Logo" className="w-9 h-9 object-contain group-hover:scale-105 transition-transform" />
               <span className="text-xl font-bold text-primary">DevTools</span>
             </Link>
 
