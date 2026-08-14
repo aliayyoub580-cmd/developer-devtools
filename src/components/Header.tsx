@@ -84,7 +84,7 @@ export const Header = () => {
           {/* Logo and desktop navigation */}
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-3 group">
-              <img src="/logo.png" alt="DevTools Logo" className="h-11 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform drop-shadow-sm" />
+              <img src="/logo.png" alt="DevTools Logo" className="h-10 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform drop-shadow-sm" />
               <span className="text-xl sm:text-2xl font-bold text-primary tracking-tight">DevTools</span>
             </Link>
 
@@ -92,17 +92,15 @@ export const Header = () => {
             <nav className="hidden lg:flex items-center gap-6">
               <Link
                 to="/"
-                className={`text-sm font-medium transition-colors ${
-                  isActive('/') ? 'text-accent' : 'text-secondary hover:text-primary'
-                }`}
+                className={`text-sm font-medium transition-colors ${isActive('/') ? 'text-accent' : 'text-secondary hover:text-primary'
+                  }`}
               >
                 Home
               </Link>
               <div className="relative group">
                 <button
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                    isActive('/category') ? 'text-accent' : 'text-secondary hover:text-primary'
-                  }`}
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${isActive('/category') ? 'text-accent' : 'text-secondary hover:text-primary'
+                    }`}
                 >
                   Tools
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,33 +131,29 @@ export const Header = () => {
               </div>
               <Link
                 to="/category/json-data"
-                className={`hidden xl:block text-sm font-medium transition-colors ${
-                  isActive('/category/json-data') ? 'text-accent' : 'text-secondary hover:text-primary'
-                }`}
+                className={`hidden xl:block text-sm font-medium transition-colors ${isActive('/category/json-data') ? 'text-accent' : 'text-secondary hover:text-primary'
+                  }`}
               >
                 JSON & Data
               </Link>
               <Link
                 to="/category/generators"
-                className={`hidden xl:block text-sm font-medium transition-colors ${
-                  isActive('/category/generators') ? 'text-accent' : 'text-secondary hover:text-primary'
-                }`}
+                className={`hidden xl:block text-sm font-medium transition-colors ${isActive('/category/generators') ? 'text-accent' : 'text-secondary hover:text-primary'
+                  }`}
               >
                 Generators
               </Link>
               <Link
                 to="/category/security"
-                className={`hidden xl:block text-sm font-medium transition-colors ${
-                  isActive('/category/security') ? 'text-accent' : 'text-secondary hover:text-primary'
-                }`}
+                className={`hidden xl:block text-sm font-medium transition-colors ${isActive('/category/security') ? 'text-accent' : 'text-secondary hover:text-primary'
+                  }`}
               >
                 Security
               </Link>
               <Link
                 to="/about"
-                className={`hidden xl:block text-sm font-medium transition-colors ${
-                  isActive('/about') ? 'text-accent' : 'text-secondary hover:text-primary'
-                }`}
+                className={`hidden xl:block text-sm font-medium transition-colors ${isActive('/about') ? 'text-accent' : 'text-secondary hover:text-primary'
+                  }`}
               >
                 About
               </Link>
