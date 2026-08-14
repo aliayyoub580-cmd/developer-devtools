@@ -8,9 +8,9 @@ export const Footer = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.png" alt="DevTools Logo" className="w-8 h-8 object-contain" />
-              <span className="text-xl font-bold text-primary">DevTools</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/logo.png" alt="DevTools Logo" className="h-10 sm:h-12 w-auto object-contain drop-shadow-sm" />
+              <span className="text-xl sm:text-2xl font-bold text-primary tracking-tight">DevTools</span>
             </div>
             <p className="text-sm text-secondary">
               Powerful developer tools. Fast, private, and free.
